@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="f">
+  <defs>
+    <linearGradient id="neonFavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#ff2e63" />
+    </linearGradient>
+    <filter id="favGlow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="64" height="64" rx="10" fill="#06070f"/>
+  
+  <!-- Neon border -->
+  <rect width="64" height="64" rx="10" fill="none" stroke="url(#neonFavGrad)" stroke-width="1.5" filter="url(#favGlow)" opacity="0.7"/>
+  
+  <!-- NM text -->
+  <text x="32" y="40" font-family="Orbitron, monospace" font-weight="900" font-size="32" text-anchor="middle" fill="url(#neonFavGrad)" filter="url(#favGlow)" letter-spacing="1">NM</text>
+  
+  <title id="f">Nick McKinnon favicon</title>
+</svg>

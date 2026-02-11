@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <defs>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#ff2e63" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="brightGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="120" height="120" rx="16" fill="#06070f"/>
+  
+  <!-- Neon border glow -->
+  <rect width="120" height="120" rx="16" fill="none" stroke="url(#neonGrad)" stroke-width="2" filter="url(#brightGlow)" opacity="0.8"/>
+  
+  <!-- Geometric accent lines (tech vibe) -->
+  <line x1="15" y1="60" x2="45" y2="60" stroke="#00f0ff" stroke-width="2" filter="url(#glow)" opacity="0.6"/>
+  <line x1="75" y1="60" x2="105" y2="60" stroke="#ff2e63" stroke-width="2" filter="url(#glow)" opacity="0.6"/>
+  
+  <!-- NM text with neon glow -->
+  <text x="60" y="68" font-family="Orbitron, monospace" font-weight="900" font-size="56" text-anchor="middle" fill="url(#neonGrad)" filter="url(#brightGlow)" letter-spacing="2">NM</text>
+  
+  <!-- Subtle corner accents -->
+  <circle cx="15" cy="15" r="2" fill="#00f0ff" filter="url(#glow)" opacity="0.8"/>
+  <circle cx="105" cy="105" r="2" fill="#ff2e63" filter="url(#glow)" opacity="0.8"/>
+  
+  <title id="title">Nick McKinnon — Cyberpunk Logo</title>
+</svg>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Nick McKinnon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.svg" alt="Nick McKinnon's logo" class="site-logo">
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="site-banner" role="img" aria-label="Nick McKinnon - Cyber Security Student"></section>
+
+    <section class="container" style="padding:4rem 20px; max-width:800px;">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, email me or use the form below.</p>
+
+      <div class="project-card" style="background:transparent; box-shadow:none; padding:0;">
+        <h3>Email</h3>
+        <p><a href="mailto:nickmckinnon08@gmail.com" class="cta-button">nickmckinnon08@gmail.com</a></p>
+
+        <h3 style="margin-top:2rem">Quick Message</h3>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+      </div>
+
+      <hr style="margin:3rem 0; border-color:rgba(0,240,255,0.2);">
+
+      <h3>Resume</h3>
+      <div style="margin:2rem 0; text-align:center;">
+        <a href="images/My%20resume.pdf"
+           target="_blank"
+           rel="noopener noreferrer"
+           download="Nick_McKinnon_Resume.pdf"
+           class="resume-link">
+          <img src="assets/resume.png"
+               alt="Nick McKinnon's Resume - Click to Download"
+               style="max-width:280px; width:100%; height:auto; border-radius:16px; border:2px solid var(--accent-cyan); box-shadow:var(--glow-cyan), var(--glow-pink); transition:all 0.4s ease;">
+          <p style="margin-top:1.2rem; font-size:1.2rem; color:var(--accent-cyan); text-shadow:0 0 12px var(--accent-cyan); font-weight:500;">
+            Click the glowing resume to view / download PDF
+          </p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Nick McKinnon's Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

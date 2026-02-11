@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap');
+
+:root {
+  --bg-darkest:    #06070f;
+  --bg-dark:       #0d1117;
+  --bg-card:       rgba(20, 25, 40, 0.65);
+  --text-primary:  #e2e8f0;
+  --text-muted:    #94a3b8;
+  --accent-pink:   #ff2e63;
+  --accent-cyan:   #00f0ff;
+  --accent-purple: #c084fc;
+  --glow-pink:     0 0 25px rgba(255, 46, 99, 0.7);
+  --glow-cyan:     0 0 25px rgba(0, 240, 255, 0.6);
+  --glow-purple:   0 0 20px rgba(192, 132, 252, 0.5);
+  --border-glow:   1px solid rgba(0, 240, 255, 0.25);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-darkest);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0,240,255,0.08) 0%, transparent 25%),
+    radial-gradient(circle at 90% 80%, rgba(255,46,99,0.07) 0%, transparent 30%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>') repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* ────────────────────────────────────────────────
+   Header / Navbar
+───────────────────────────────────────────────── */
+header {
+  background: rgba(13, 17, 23, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+}
+
+.nav-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 12px var(--accent-cyan);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-cyan));
+  transition: width 0.4s ease;
+}
+
+.nav-menu a:hover::after { width: 100%; }
+
+/* ────────────────────────────────────────────────
+   Banner (used on all pages) – updated to fit your custom banner perfectly
+───────────────────────────────────────────────── */
+.site-banner {
+  /* Core setup */
+  min-height: 420px;                    /* Good balance – increase to 500–550px if you want it taller */
+  background-color: #0d001a;            /* Dark purple/navy fallback matching your banner */
+  
+  background-image: 
+    linear-gradient(rgba(13, 0, 26, 0.60), rgba(13, 0, 26, 0.35)),  /* subtle overlay */
+    url('images/banner.jpg');                                 /* ← CHANGE THIS to your actual filename */
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;             /* Shows full image without cropping text or lightning */
+  background-attachment: scroll;        /* change to 'fixed' for parallax if desired */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional cyberpunk scanline effect */
+.site-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 35%,
+    rgba(0, 240, 255, 0.05) 50%,
+    transparent 65%
+  );
+  animation: scanline 14s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .site-banner {
+    min-height: 520px;                  /* Taller on desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .site-banner {
+    min-height: 320px;
+    background-size: contain;
+    background-position: center 40%;    /* Slight top bias on mobile if needed */
+  }
+}
+
+/* ────────────────────────────────────────────────
+   Container & Content
+───────────────────────────────────────────────── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6)) drop-shadow(0 0 10px rgba(255, 46, 99, 0.5));
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: var(--border-glow);
+  border-radius: 16px;
+  padding: 2.2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--glow-cyan), 0 10px 40px rgba(0,0,0,0.5);
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-16px);
+  box-shadow: var(--glow-pink), 0 25px 60px rgba(0,0,0,0.6);
+  border-color: rgba(255,46,99,0.5);
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--accent-pink), #d946ef);
+  color: white;
+  padding: 0.95rem 2.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: var(--glow-pink);
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255,46,99,0.9), var(--glow-cyan);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0 18px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(0,240,255,0.3);
+  border-radius: 10px;
+  color: white;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0,240,255,0.4);
+}
+
+footer {
+  background: rgba(13,17,23,0.9);
+  border-top: 1px solid rgba(0,240,255,0.15);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Resume link hover */
+.resume-link:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(0, 240, 255, 0.9), 0 0 80px rgba(255, 46, 99, 0.8) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+}
